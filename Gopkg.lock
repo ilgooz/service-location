@@ -24,22 +24,6 @@
   version = "v1.2.0"
 
 [[projects]]
-  digest = "1:ca955a9cd5b50b0f43d2cc3aeb35c951473eeca41b34eb67507f1dbcc0542394"
-  name = "github.com/kr/pretty"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "73f6ac0b30a98e433b289500d779f50c1a6f0712"
-  version = "v0.1.0"
-
-[[projects]]
-  digest = "1:15b5cc79aad436d47019f814fde81a10221c740dc8ddf769221a65097fb6c2e9"
-  name = "github.com/kr/text"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "e2ffdb16a802fe2bb95e2e35ff34f0e53aeef34f"
-  version = "v0.1.0"
-
-[[projects]]
   digest = "1:e16b454d87dc0dc977cbfdee80ea9ee9caee2f17559643c47ddb94d9993785ea"
   name = "github.com/mesg-foundation/core"
   packages = ["x/xsignal"]
@@ -76,12 +60,12 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
+  branch = "master"
+  digest = "1:a3b8912deeef29007fab9a13a9f21b9e9b59c621a2ed61e2fe7b37320a71fbd5"
   name = "github.com/satori/go.uuid"
   packages = ["."]
   pruneopts = "UT"
-  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
-  version = "v1.2.0"
+  revision = "b2ce2384e17bbe0c6d34077efa39dbab3e09123b"
 
 [[projects]]
   digest = "1:c40d65817cdd41fac9aa7af8bed56927bb2d6d47e4fea566a74880f5c2b1c41e"
@@ -93,14 +77,6 @@
   pruneopts = "UT"
   revision = "f35b8ab0b5a2cef36673838d662e249dd9c94686"
   version = "v1.2.2"
-
-[[projects]]
-  branch = "master"
-  digest = "1:42a7575a9db2a8adb8176427163dfbd63f49214ff6529efb00855c9038bee269"
-  name = "github.com/stvp/assert"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "4bc16443988bace8e1b42d62d3601f70d74e4638"
 
 [[projects]]
   branch = "master"
@@ -205,7 +181,6 @@
     "github.com/mesg-foundation/go-service/mesgtest",
     "github.com/oschwald/maxminddb-golang",
     "github.com/stretchr/testify/require",
-    "github.com/stvp/assert",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

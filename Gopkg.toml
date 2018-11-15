@@ -41,10 +41,6 @@
   name = "github.com/stretchr/testify"
   version = "1.2.2"
 
-[[constraint]]
-  branch = "master"
-  name = "github.com/stvp/assert"
-
 [prune]
   go-tests = true
   unused-packages = true
