@@ -5,7 +5,7 @@ import (
 
 	mesg "github.com/mesg-foundation/go-service"
 	mesgtest "github.com/mesg-foundation/go-service/mesgtest"
-	"github.com/stvp/assert"
+	"github.com/stretchr/testify/require"
 )
 
 const (
@@ -22,7 +22,7 @@ func newServiceAndServer(t *testing.T) (*mesg.Service, *mesgtest.Server) {
 		mesg.TokenOption(token),
 		mesg.EndpointOption(endpoint),
 	)
-	assert.Nil(t, err)
-	assert.NotNil(t, service)
+	require.NoError(t, err)
+	require.NotNil(t, service)
 	return service, testServer
 }

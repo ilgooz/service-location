@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/stvp/assert"
 )
 
 func TestLocateSuccess(t *testing.T) {
@@ -48,10 +47,10 @@ func TestListenError(t *testing.T) {
 	go ls.Start()
 
 	_, execution, err := server.Execute("locate", data)
-	assert.Nil(t, err)
-	assert.Equal(t, "error", execution.Key())
+	require.NoError(t, err)
+	require.Equal(t, "error", execution.Key())
 
 	var outputs errorOutput
-	assert.Nil(t, execution.Data(&outputs))
-	assert.Contains(t, "IP address is not valid", outputs.Message)
+	require.NoError(t, execution.Data(&outputs))
+	require.Contains(t, "IP address is not valid", outputs.Message)
 }
