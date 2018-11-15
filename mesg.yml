@@ -1,0 +1,33 @@
+name: location
+description: find your location
+tasks:
+  locate:
+    inputs:
+      ip:
+        description: IP address to find location for.
+        type: String
+    outputs:
+      location:
+        data:
+          city:
+            type: String
+          country:
+            type: String
+          countryISOCode:
+            type: String
+          continent:
+            type: String
+          continentCode:
+            type: String
+          timeZone:
+            type: String
+          latitude:
+            type: Number
+          longitude:
+            type: Number
+          postalCode:
+            type: String
+      error:
+        data:
+          message:
+            type: String
