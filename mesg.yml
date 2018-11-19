@@ -1,5 +1,5 @@
 name: location
-description: find your location
+description: find locations of ip addresses
 repository: https://github.com/ilgooz/service-location
 tasks:
   locate:
