@@ -1,5 +1,6 @@
 name: location
 description: find your location
+repository: https://github.com/ilgooz/service-location
 tasks:
   locate:
     inputs:
