@@ -35,7 +35,7 @@ func TestLocateSuccess(t *testing.T) {
 	require.Equal(t, "34445", outputs.PostalCode)
 }
 
-func TestListenError(t *testing.T) {
+func TestLocateError(t *testing.T) {
 	var (
 		data = locateInputs{
 			IP: "invalid",
