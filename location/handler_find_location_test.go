@@ -52,5 +52,5 @@ func TestLocateError(t *testing.T) {
 
 	var outputs errorOutput
 	require.NoError(t, execution.Data(&outputs))
-	require.Contains(t, "IP address is not valid", outputs.Message)
+	require.Equal(t, "IP address is not valid", outputs.Message)
 }
