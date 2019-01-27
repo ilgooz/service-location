@@ -1,20 +1,20 @@
 package location
 
 import (
-	mesg "github.com/mesg-foundation/go-service"
+	"github.com/mesg-foundation/core/client/service"
 	maxminddb "github.com/oschwald/maxminddb-golang"
 )
 
 // LocationService is a MESG service to find locations of IP addresses.
 type LocationService struct {
-	s *mesg.Service
+	s *service.Service
 
 	dbPath string
 	db     *maxminddb.Reader
 }
 
 // New creates a new location service with given mesg service and maxmindDBPath.
-func New(service *mesg.Service, maxmindDBPath string) *LocationService {
+func New(service *service.Service, maxmindDBPath string) *LocationService {
 	return &LocationService{
 		s:      service,
 		dbPath: maxmindDBPath,
@@ -35,7 +35,7 @@ const (
 
 func (s *LocationService) listenTasks() error {
 	return s.s.Listen(
-		mesg.Task(locateTaskKey, s.locateHandler),
+		service.Task(locateTaskKey, s.locateHandler),
 	)
 }
 

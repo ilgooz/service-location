@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net"
 
-	mesg "github.com/mesg-foundation/go-service"
+	"github.com/mesg-foundation/core/client/service"
 )
 
 const locateLocationOutputKey = "location"
@@ -54,7 +54,7 @@ type locationData struct {
 }
 
 // locateHandler is a task handler to locate an IP address.
-func (s *LocationService) locateHandler(execution *mesg.Execution) (string, mesg.Data) {
+func (s *LocationService) locateHandler(execution *service.Execution) (string, interface{}) {
 	var inputs locateInputs
 	if err := execution.Data(&inputs); err != nil {
 		return newErrorOutput(err)
@@ -70,7 +70,7 @@ func (s *LocationService) locateHandler(execution *mesg.Execution) (string, mesg
 		return newErrorOutput(err)
 	}
 
-	return locateLocationOutputKey, locateLocationOutputs{
+	return "location", locateLocationOutputs{
 		City:           data.City.Names.EN,
 		Country:        data.Country.Names.EN,
 		CountryISOCode: data.Country.Code,

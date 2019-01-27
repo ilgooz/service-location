@@ -5,8 +5,8 @@ import (
 	"log"
 
 	"github.com/ilgooz/service-location/location"
+	"github.com/mesg-foundation/core/client/service"
 	"github.com/mesg-foundation/core/x/xsignal"
-	mesg "github.com/mesg-foundation/go-service"
 )
 
 var (
@@ -16,12 +16,12 @@ var (
 func main() {
 	flag.Parse()
 
-	service, err := mesg.New()
+	s, err := service.New()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ls := location.New(service, *maxmindDBPath)
+	ls := location.New(s, *maxmindDBPath)
 
 	// start the location service.
 	go func() {

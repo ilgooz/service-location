@@ -3,8 +3,8 @@ package location
 import (
 	"testing"
 
-	mesg "github.com/mesg-foundation/go-service"
-	mesgtest "github.com/mesg-foundation/go-service/mesgtest"
+	"github.com/mesg-foundation/core/client/service"
+	"github.com/mesg-foundation/core/client/service/servicetest"
 	"github.com/stretchr/testify/require"
 )
 
@@ -15,14 +15,14 @@ const (
 	endpoint = "endpoint"
 )
 
-func newServiceAndServer(t *testing.T) (*mesg.Service, *mesgtest.Server) {
-	testServer := mesgtest.NewServer()
-	service, err := mesg.New(
-		mesg.DialOption(testServer.Socket()),
-		mesg.TokenOption(token),
-		mesg.EndpointOption(endpoint),
+func newServiceAndServer(t *testing.T) (*service.Service, *servicetest.Server) {
+	testServer := servicetest.NewServer()
+	s, err := service.New(
+		service.DialOption(testServer.Socket()),
+		service.TokenOption(token),
+		service.EndpointOption(endpoint),
 	)
 	require.NoError(t, err)
-	require.NotNil(t, service)
-	return service, testServer
+	require.NotNil(t, s)
+	return s, testServer
 }

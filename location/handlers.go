@@ -1,7 +1,5 @@
 package location
 
-import mesg "github.com/mesg-foundation/go-service"
-
 // output key for errors.
 const errOutputKey = "error"
 
@@ -11,6 +9,6 @@ type errorOutput struct {
 }
 
 // newErrorOutput returns a new error output from given err.
-func newErrorOutput(err error) (outputKey string, outputData mesg.Data) {
+func newErrorOutput(err error) (outputKey string, outputData interface{}) {
 	return errOutputKey, errorOutput{Message: err.Error()}
 }
