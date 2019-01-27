@@ -1,4 +1,4 @@
-FROM golang:1.10.4
+FROM golang:1.11.4
 WORKDIR /go/src/github.com/ilgooz/service-location
 COPY . .
 RUN go install ./...

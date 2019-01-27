@@ -2,7 +2,7 @@ version: 2
 
 runOnDocker: &runOnDocker
   docker:
-    - image: circleci/golang:1.10
+    - image: circleci/golang:1.11.4
   working_directory: /go/src/github.com/ilgooz/service-location
 
 jobs:
@@ -10,7 +10,8 @@ jobs:
     <<: *runOnDocker
     steps:
       - checkout
-      - run: go get -v -t -d ./...
+      - run: GO111MODULE=on go mod download
+      - run: GO111MODULE=on go mod vendor
       - run: go test -p 1 -coverprofile=coverage.txt ./...
       - run: bash <(curl -s https://codecov.io/bash)
 
